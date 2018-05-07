@@ -48,7 +48,7 @@ class RectFactory(object):
         nrows = nrows or self.nrows
         ncols = ncols or self.ncols
         margins = margins or self.margins
-        
+
         (margin_left, hsep, margin_right) = margins[0]
         (margin_bot, vsep, margin_top) = margins[1]
         axes_width = (self.fig_width-margin_right-margin_left-hsep*int(ncols-1))/float(ncols)
@@ -70,11 +70,19 @@ class RectFactory(object):
 
 def add_background_axes(figure, rect, facecolor=None, alpha=0.5):
     """Add background axis.
+
+    :param figure: matplotlib.figure.Figure associated with axes.
+
+    :param rect: Tuple with axis origin and extent (left, bottom, width, height).
+
+    :param facecolor: Face color of axis patch.
+
+    :param alpha: Transparency of axis patch.
     """
     if facecolor is None:
         import matplotlib
         facecolor = matplotlib.rcParams["legend.facecolor"]
-    
+
     ax = figure.add_axes(rect)
     ax.patch.set_facecolor(facecolor)
     ax.patch.set_alpha(alpha)
