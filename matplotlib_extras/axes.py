@@ -23,8 +23,8 @@ class RectFactory(object):
             separation between subplots.  ((left, hsep, right),
             (bottom, vsep, top)
         """
-        self.fig_height = figure.height
-        self.fig_width = figure.width
+        self.fig_height = figure.get_figheight()
+        self.fig_width = figure.get_figwidth()
         self.nrows = nrows
         self.ncols = ncols
         self.margins = margins
@@ -45,7 +45,10 @@ class RectFactory(object):
         separation between subplots.  ((left, hsep, right), (bottom,
         vsep, top)
         """
+        nrows = nrows or self.nrows
+        ncols = ncols or self.ncols
         margins = margins or self.margins
+        
         (margin_left, hsep, margin_right) = margins[0]
         (margin_bot, vsep, margin_top) = margins[1]
         axes_width = (self.fig_width-margin_right-margin_left-hsep*int(ncols-1))/float(ncols)
