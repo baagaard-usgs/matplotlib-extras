@@ -68,4 +68,23 @@ class RectFactory(object):
         return [left, bottom, axes_width/self.fig_width, axes_height/self.fig_height]
 
 
+def add_background_axes(figure, rect, facecolor=None, alpha=0.5):
+    """Add background axis.
+    """
+    if facecolor is None:
+        import matplotlib
+        facecolor = matplotlib.rcParams["legend.facecolor"]
+    
+    ax = figure.add_axes(rect)
+    ax.patch.set_facecolor(facecolor)
+    ax.patch.set_alpha(alpha)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.spines["top"].set_color("none")
+    ax.spines["bottom"].set_color("none")
+    ax.spines["left"].set_color("none")
+    ax.spines["right"].set_color("none")
+    return
+
+
 # End of file
