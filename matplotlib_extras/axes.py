@@ -84,7 +84,7 @@ def add_background_axes(figure, rect, facecolor=None, alpha=0.5):
     ax.spines["bottom"].set_color("none")
     ax.spines["left"].set_color("none")
     ax.spines["right"].set_color("none")
-    return
+    return ax
 
 
 # End of file
