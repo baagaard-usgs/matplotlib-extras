@@ -1,0 +1,6 @@
+README.md
+CHANGES.md
+setup.py
+matplotlib_extras/__init__.py
+matplotlib_extras/axes.py
+matplotlib_extras/colors.py
