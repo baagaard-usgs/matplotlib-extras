@@ -68,7 +68,7 @@ class RectFactory(object):
         return [left, bottom, axes_width/self.fig_width, axes_height/self.fig_height]
 
 
-def add_background_axes(figure, rect, facecolor=None, alpha=0.5):
+def add_background_axes(figure, rect, facecolor=None, alpha=0.67):
     """Add background axis.
 
     :param figure: matplotlib.figure.Figure associated with axes.
