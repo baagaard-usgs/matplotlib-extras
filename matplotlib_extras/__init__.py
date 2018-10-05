@@ -3,8 +3,8 @@
 # U.S. Geological Survey
 # ======================================================================
 
-import axes
-import colors
+from . import axes
+from . import colors
 
 __ALL__ = [
     "axes",
